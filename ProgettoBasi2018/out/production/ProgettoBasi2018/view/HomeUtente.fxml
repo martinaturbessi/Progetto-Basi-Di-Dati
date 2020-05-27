@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #2a446d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageUserController">
+   <children>
+      <HBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="130.0" prefWidth="1280.0">
+         <children>
+            <ImageView blendMode="COLOR_DODGE" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/arrow_left.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="15.0" />
+               </HBox.margin>
+            </ImageView>
+            <Hyperlink fx:id="btnLogout" alignment="CENTER" onAction="#doBtnLogout" prefHeight="50.0" prefWidth="130.0" text="Logout" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="32.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="15.0" />
+               </HBox.margin>
+            </Hyperlink>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Utente" textAlignment="CENTER" wrappingWidth="800.0">
+               <font>
+                  <Font name="Arial Black" size="90.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="60.0" right="240.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1280.0">
+         <children>
+            <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ricerca Filamenti:" wrappingWidth="500.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="40.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Text>
+                  <Hyperlink fx:id="filIDBtn" onAction="#doFilamentoIDBtn" prefHeight="40.0" prefWidth="500.0" text="● Per ID o denominazione" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Hyperlink>
+                  <Hyperlink fx:id="filContrastoBtn" onAction="#doFilContrastoBtn" prefHeight="40.0" prefWidth="500.0" text="● Per contrasto ed ellitticità" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="filSegmentiBtn" onAction="#doFilSegmentiBtn" prefHeight="40.0" prefWidth="500.0" text="● Per numero di segmenti" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Hyperlink>
+                  <Hyperlink fx:id="filRegioneBtn" onAction="#doFilRegioneBtn" prefHeight="40.0" prefWidth="500.0" text="● All'interno di una regione" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </Hyperlink>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ricerca Stelle:" wrappingWidth="500.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="40.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Hyperlink fx:id="stellaInFilBtn" onAction="#doStellaInFilBtn" prefHeight="40.0" prefWidth="500.0" text="● All'interno di un filamento" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Hyperlink>
+                  <Hyperlink fx:id="stellaRegioneBtn" onAction="#doStellaRegioneBtn" prefHeight="40.0" prefWidth="500.0" text="● All'interno di una regione" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </VBox>
+            <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.58" orientation="VERTICAL" prefHeight="500.0" prefWidth="20.0">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Separator>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Calcolo della distanza:" wrappingWidth="500.0">
+                     <font>
+                        <Font name="Berlin Sans FB" size="40.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Hyperlink fx:id="segmContornoBtn" onAction="#doSegmContornoBtn" prefHeight="40.0" prefWidth="500.0" text="● Tra un segmento e il contorno" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </Hyperlink>
+                  <Hyperlink fx:id="stellaSpinaBtn" onAction="#doStellaSpinaBtn" prefHeight="40.0" prefWidth="500.0" text="● Tra una stella e la spina dorsale" textFill="WHITE">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Hyperlink>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #2a446d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CalcoloDistanzaSegmentoContornoController">
+   <children>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="130.0" prefWidth="1280.0">
+         <children>
+            <ImageView blendMode="COLOR_DODGE" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/arrow_left.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Hyperlink fx:id="backBtn" alignment="CENTER" onAction="#doBtnBack" prefHeight="50.0" prefWidth="90.0" text="Back" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" right="22.0" />
+               </HBox.margin>
+            </Hyperlink>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Calcolo della distanza" textAlignment="CENTER" wrappingWidth="956.49169921875">
+               <font>
+                  <Font name="Arial Black" size="71.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="162.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="TRA UN SEGMENTO DAL CONTORNO">
+         <font>
+            <Font name="Berlin Sans FB" size="49.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserire l'ID di un segmento:">
+         <font>
+            <Font name="Arial Black" size="30.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="100.0" />
+         </VBox.margin>
+      </Text>
+      <TextField fx:id="tfSegm" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="460.0" promptText="ID del segmento">
+         <font>
+            <Font name="Arial" size="25.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </TextField>
+      <Button fx:id="calculateBtn" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#doCalculate" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #FFFFFF;" text="Calcola" textAlignment="CENTER" textFill="#2a446d">
+         <font>
+            <Font name="Arial Black" size="30.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Button>
+      <Label fx:id="lbMinV" prefHeight="50.0" prefWidth="600.0" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="30.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="70.0" />
+         </VBox.margin>
+      </Label>
+      <Label fx:id="lbMaxV" layoutX="350.0" layoutY="522.0" prefHeight="50.0" prefWidth="600.0" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="30.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Label>
+   </children>
+</VBox>

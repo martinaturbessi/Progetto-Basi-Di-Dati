@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #2a446d;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RicercaStelleInRettangoloController">
+   <children>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="130.0" prefWidth="1280.0">
+         <children>
+            <ImageView blendMode="COLOR_DODGE" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Img/arrow_left.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Hyperlink alignment="CENTER" prefHeight="50.0" prefWidth="90.0" text="Back" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" right="22.0" />
+               </HBox.margin>
+            </Hyperlink>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Ricerca stelle" textAlignment="CENTER" wrappingWidth="956.49169921875">
+               <font>
+                  <Font name="Arial Black" size="71.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="162.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="ALL'INTERNO DI UN RETTANGOLO">
+         <font>
+            <Font name="Berlin Sans FB" size="49.0" />
+         </font>
+      </Text>
+      <HBox>
+         <VBox.margin>
+            <Insets top="50.0" />
+         </VBox.margin>
+         <children>
+            <VBox alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="580.0">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserire i lati del rettangolo:">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="tfLato_lat" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="500.0" promptText="Altezza" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font name="Arial" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="tfLato_long" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="45.0" prefWidth="500.0" promptText="Base" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font name="Arial" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserire le coordinate del centroide:">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextField fx:id="tfLatCentr" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="45.0" prefWidth="500.0" promptText="Latitudine" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font name="Arial" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="tfLongCentr" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="45.0" prefWidth="500.0" promptText="Longitudine" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font name="Arial" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button fx:id="btnResearch" mnemonicParsing="false" onAction="#researchInRectangle" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" text="Ricerca" textFill="#2a446d">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefWidth="700.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="25.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="700.0" text="Stelle esterne ai filamenti" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="30.0" />
+                     </font>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <PieChart fx:id="chartNotInFil" legendSide="RIGHT" prefHeight="240.0" />
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="lblUnboundNotInFil" prefHeight="30.0" prefWidth="204.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPrestellarNotInFil" layoutX="10.0" layoutY="115.0" prefHeight="30.0" prefWidth="204.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="7.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblProtostellarNotInFil" layoutX="10.0" layoutY="130.0" prefHeight="30.0" prefWidth="204.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="7.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="700.0" text="Stelle interne ai filamenti" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="30.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <PieChart fx:id="chartInFil" legendSide="RIGHT" prefHeight="240.0" />
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label fx:id="lblUnboundInFil" prefHeight="30.0" prefWidth="204.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPrestellarInFil" layoutX="10.0" layoutY="115.0" prefHeight="30.0" prefWidth="204.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="7.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="lblProtostellarInFil" layoutX="10.0" layoutY="130.0" prefHeight="30.0" prefWidth="204.0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="7.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
